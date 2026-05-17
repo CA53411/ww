@@ -17,6 +17,8 @@ import Account from './pages/Account';
 import OAuthConsent from './pages/OAuthConsent';
 import NotFound from './pages/NotFound';
 
+import Payment from './pages/Payment';
+
 function App() {
   return (
     <AuthProvider>
@@ -29,6 +31,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reset-password" element={<ResetPassword />} />

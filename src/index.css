@@ -25,6 +25,7 @@
     --ring: 0 0% 0%;
     --radius: 0px;
 
+    /* Corolas Brand */
     --bg-dark: #070708;
     --bg-dark-secondary: #0e0e10;
     --bg-light: #f4f4f5;
@@ -36,6 +37,16 @@
     --accent-warm: #e8ddd0;
     --border-subtle: rgba(255,255,255,0.08);
     --border-light: rgba(0,0,0,0.1);
+    
+    /* Gold palette */
+    --gold-50: #FBF7EC;
+    --gold-100: #F5ECCE;
+    --gold-200: #EBD99C;
+    --gold-300: #E0C669;
+    --gold-400: #D6B347;
+    --gold-500: #C9A84C;
+    --gold-600: #A68A3F;
+    --gold-700: #826B32;
   }
 
   html {
@@ -46,7 +57,7 @@
   }
 
   body {
-    font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: "Inter", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-primary);
     overflow-x: hidden;
@@ -57,4 +68,63 @@
     background-color: var(--accent-gold);
     color: var(--bg-dark);
   }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.15);
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C9A84C 0%, #E0C669 50%, #C9A84C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-dark {
+    background: rgba(7,7,8,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] border border-white text-white bg-transparent transition-all duration-300;
+  }
+  .btn-primary:hover {
+    @apply bg-white text-[#070708];
+  }
+  
+  .section-padding {
+    padding-left: clamp(24px, 5vw, 72px);
+    padding-right: clamp(24px, 5vw, 72px);
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out both;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

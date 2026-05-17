@@ -148,6 +148,32 @@ function HeroSection() {
             Explore Our Work
           </Link>
           <Link
+            to="/payment"
+            style={{
+              fontSize: '13px',
+              fontWeight: 500,
+              letterSpacing: '0.14em',
+              color: '#c8a45c',
+              backgroundColor: 'transparent',
+              border: '1px solid #c8a45c',
+              padding: '16px 36px',
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+              transition: 'all 0.3s ease',
+              display: 'inline-block',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#c8a45c';
+              e.currentTarget.style.color = '#070708';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = '#c8a45c';
+            }}
+          >
+            Pricing
+          </Link>
+          <Link
             to="/about"
             style={{
               fontSize: '13px',
